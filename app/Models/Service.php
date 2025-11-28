@@ -41,6 +41,7 @@ class Service extends Model
                     ->withTimestamps();
     }
 
+
     // الحجوزات المرتبطة بهذه الخدمة
     public function bookings()
     {

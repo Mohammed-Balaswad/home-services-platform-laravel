@@ -11,8 +11,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->alias([
+            'admin' => \App\Http\Middleware\IsAdmin::class,
+            'technician' => \App\Http\Middleware\IsTechnician::class,
+            'client' => \App\Http\Middleware\IsClient::class,
+        ]);
     })
+    
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();

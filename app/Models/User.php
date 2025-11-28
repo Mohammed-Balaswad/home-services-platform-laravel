@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Booking;
+use App\Models\Review;
 
 class User extends Authenticatable
 {
@@ -62,8 +64,11 @@ class User extends Authenticatable
     //  الفني يقدّم خدمات (many-to-many)
     public function services()
     {
-        return $this->belongsToMany(Service::class, 'technician_services');
+        return $this->belongsToMany(Service::class, 'technician_services', 'technician_id', 'service_id')
+                    ->withPivot('price')
+                    ->withTimestamps();
     }
+    
 
     //  الفني الواحد عنده عدة مواعيد متاحة
     public function schedules()
@@ -73,14 +78,23 @@ class User extends Authenticatable
 
     //  المستخدم عنده تقييمات 
     public function reviews()
-    {
-        return $this->hasMany(Review::class, 'user_id');
-    }
+{
+    return $this->hasManyThrough(
+        Review::class,
+        Booking::class,
+        'technician_id',   
+        'booking_id',      
+        'id',              
+        'id'               
+    );
+}
+
 
     //  المستخدم يستقبل إشعارات
     public function notifications()
     {
         return $this->hasMany(Notification::class);
     }
+    
 
 }
