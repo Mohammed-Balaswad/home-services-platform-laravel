@@ -1,7 +1,7 @@
 # 🛠️ Home Services Platform – Laravel  
 منصة خدمات منزلية لإدارة الفنيين والطلبات والمستخدمين
 
-**Developed by:** *Muhammed Saleh Balaswad*
+تم التطوير بواسطة: محمد صالح بالسود
 
 منصة احترافية لإدارة وتقديم الخدمات المنزلية، تُمكّن المدير من التحكم الكامل بالمحتوى،  
 وتوفر للفني واجهة لإدارة حجوزاته وجدوله وتقييماته،  
@@ -11,19 +11,23 @@
 
 ## 📸 معاينة سريعة (Screenshots)
 
-> **استبدل الروابط بصورك الفعلية بعد الرفع في GitHub**
 
 ### 🔹 لوحة تحكم المدير (Admin Dashboard)
-![Admin Dashboard](https://raw.githubusercontent.com/username/repo/main/screenshots/admin_dashboard.png)
+![Admin Dashboard](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/main/screenshots/admin_dashboard.png)
 
-### 🔹 إدارة الفنيين
-![Technicians](https://raw.githubusercontent.com/username/repo/main/screenshots/admin_technicians.png)
+### 🔹 إدارة الفنيين (Admin)
+![Admin_Technicians](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/main/screenshots/admin_technicians.png)
 
-### 🔹 حجوزات الفني
-![Technician Bookings](https://raw.githubusercontent.com/username/repo/main/screenshots/technician_bookings.png)
+### 🔹 إدارة الحجوزات (Admin)
+![Admin_Bookings](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/main/screenshots/admin_bookings.png)
 
-### 🔹 الصفحة الرئيسية للعميل
-![Client Home](https://raw.githubusercontent.com/username/repo/main/screenshots/client_home.png)
+### 🔹 حجوزات الفني (technician)
+![Technician Bookings](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/main/screenshots/technician_bookings.png)
+
+### 🔹 مواعيد الفني (technician)
+![Technician schedules](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/main/screenshots/technician_schedules.png)
+
+
 
 ---
 
@@ -40,7 +44,7 @@
 ## ✨ مميزات المشروع
 
 ### 🔹 **الإدارة (Admin Panel)**
-- إدارة المستخدمين (عملاء – فنيين – مديرين).
+- إدارة المستخدمين (عملاء – فنيين).
 - إدارة الفئات والخدمات.
 - إدارة الحجوزات والتقييمات.
 - إحصائيات لحظية في لوحة التحكم.
@@ -72,9 +76,8 @@
 
 ## 🧱 بنية قاعدة البيانات (ERD)
 
-> **صورة الـERD التي أرفقتها سابقاً – فقط ارفعها ثم استخدم رابط RAW**
 
-![ERD](https://raw.githubusercontent.com/username/repo/main/screenshots/erd.png)
+![ERD](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/main/screenshots/ERD.png)
 
 ---
 
@@ -84,3 +87,116 @@
 ```bash
 git clone https://github.com/Mohammed-Balaswad/Home_Services_Laravel.git
 cd Home_Services_Laravel
+
+
+2️⃣ تثبيت الاعتماديات
+```bash
+composer install
+npm install
+
+
+3️⃣ نسخ ملف البيئة
+```bash
+cp .env.example .env
+
+
+4️⃣ ضبط قاعدة البيانات
+- أنشئ قاعدة بيانات جديدة
+- عدّل المتغيرات داخل .env:
+```bash
+DB_DATABASE=home_services_db
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+5️⃣ إنشاء مفتاح التطبيق
+```bash
+php artisan key:generate
+
+
+6️⃣ تنفيذ المايجريشن + Seeder
+```bash
+php artisan migrate --seed
+
+
+7️⃣ تشغيل النظام
+```bash
+php artisan serve
+npm run dev
+
+
+---
+
+ ## 📁 بنية المشروع
+
+app/
+ ├── Http/
+ │   ├── Controllers/
+ │   │   ├── Admin/
+ │   │   ├── Technician/
+ │   │   └── Client/
+ │   ├── Middleware/
+ │   └── Requests/
+ ├── Models/
+resources/
+ ├── views/
+ │   ├── admin/
+ │   ├── technician/
+ │   ├── client/
+ │   └── components/layouts/
+routes/
+ ├── web.php
+ └── api.php
+
+
+---
+
+
+## 🧩 الأدوار والصلاحيات
+
+### 🔹 **Admin**
+- التحكم الكامل بجميع البيانات
+- إدارة الفنيين والمستخدمين
+- إدارة الخدمات والفئات
+- عرض جميع الحجوزات والتقييمات
+
+### 🔹 **Technician**
+- عرض الحجوزات الخاصة به
+- عتغيير حالة الحجز (قبول/رفض/إكمال)
+- إدارة جدول المواعيد
+- استقبال التقييمات بعد إتمام الخدمات
+- تعديل معلوماته الشخصية
+
+### 🔹 **Client**
+- البحث عن الخدمات والفنيين
+- إنشاء طلب خدمة (Booking)
+- متابعة الطلبات
+- تقييم الخدمات
+- تحديث بيانات الحساب
+
+
+---
+
+
+---
+
+
+## 🧪 مستقبل المشروع
+
+- إضافة نظام محادثات مباشرة (Client ↔ Technician).
+- إضافة الدفع الإلكتروني.
+- إضافة نظام تنبيهات متكامل (Notifications Table جاهز).
+
+
+---
+
+
+## ⭐ شكر وتقدير
+
+تم تطوير هذا المشروع بشغف وإصرار بهدف اكتساب خبرة حقيقية في تطوير الأنظمة
+باستخدام Laravel، مع الاهتمام بالنظافة المعمارية والواجهات الاحترافية.
+
+Developer: Muhammed Saleh Balaswad
+Feel free to ⭐ the repo if you find it useful!
+
+---
