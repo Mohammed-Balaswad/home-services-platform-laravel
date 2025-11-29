@@ -13,7 +13,7 @@
 
 
 ### 🔹 لوحة تحكم المدير (Admin Dashboard)
-![Admin Dashboard](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/main/screenshots/admin_dashboard.png)
+![Admin Dashboard](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/master/screenshots/admin_dashboard.png)
 
 ### 🔹 إدارة الفنيين (Admin)
 ![Admin_Technicians](https://raw.githubusercontent.com/Mohammed-Balaswad/repo/main/screenshots/admin_technicians.png)
