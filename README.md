@@ -133,6 +133,16 @@ php artisan serve
 npm run dev
 ```
 
+
+8 حسابات تسجيل الدخول
+### 🔹 **Admin**
+email: admin@gmail.com
+password: 123456
+
+### 🔹 **Technician + Client**
+- You can add Technician from admin tasks
+- Client can added from register form bage 
+
 ---
 ---
 
