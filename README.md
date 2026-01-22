@@ -1,221 +1,52 @@
-# 🛠️ Home Services Platform – Laravel  
-منصة خدمات منزلية لإدارة الفنيين والطلبات والمستخدمين
+# 🛠️ Home Services Platform (Al-Mukalla Region)
 
-تم التطوير بواسطة: محمد صالح بالسود
+[![Laravel Version](https://img.shields.io/badge/Laravel-v11/12-red.svg)](https://laravel.com)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.0-blue.svg)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-منصة احترافية لإدارة وتقديم الخدمات المنزلية، تُمكّن المدير من التحكم الكامل بالمحتوى،  
-وتوفر للفني واجهة لإدارة حجوزاته وجدوله وتقييماته،  
-وللعميل واجهة بحث وطلب خدمات بسهولة وبواجهة حديثة.
+An integrated digital solution designed to bridge the gap between local technicians and households in **Al-Mukalla, Yemen**. This platform streamlines the process of booking, managing, and evaluating home services through a robust three-tier architecture.
 
 ---
 
-## 📸 معاينة سريعة (Screenshots)
+## 📌 Project Overview
+In my local community, finding trusted technicians (plumbers, electricians, etc.) is often a manual and fragmented process. This project was developed to provide a **centralized, transparent, and user-friendly** marketplace where service providers and clients can interact efficiently.
 
+---
 
+## 📸 Visual Showcase
 
-### 🔹 لوحة تحكم المدير (Admin Dashboard)
+### 🖥️ Admin Control Center
+> *Complete oversight of users, services, and platform analytics.*
 ![Admin Dashboard](https://raw.githubusercontent.com/Mohammed-Balaswad/Home_Serveices_Laravel/master/screenshots/admin_dashboard.png)
 
-### 🔹 إدارة الفنيين (Admin)
-![Admin_Technicians](https://raw.githubusercontent.com/Mohammed-Balaswad/Home_Serveices_Laravel/master/screenshots/admin_technicians.png)
-
-### 🔹 إدارة الحجوزات (Admin)
-![Admin_Bookings](https://raw.githubusercontent.com/Mohammed-Balaswad/Home_Serveices_Laravel/master/screenshots/admin_bookings.png)
-
-### 🔹 حجوزات الفني (technician)
+### 👨‍🔧 Technician Workspace & Scheduling
+> *Manage bookings and availability with a dedicated professional interface.*
 ![Technician Bookings](https://raw.githubusercontent.com/Mohammed-Balaswad/Home_Serveices_Laravel/master/screenshots/technician_bookings.png)
 
-### 🔹 مواعيد الفني (technician)
-![Technician schedules](https://raw.githubusercontent.com/Mohammed-Balaswad/Home_Serveices_Laravel/master/screenshots/technician_schedules.png)
-
-
-
----
-
-## 🗂️ **المحتويات**
-- [✨ مميزات المشروع](#-مميزات-المشروع)
-- [🧱 بنية قاعدة البيانات (ERD)](#-بنية-قاعدة-البيانات-erd)
-- [🚀 كيفية تشغيل المشروع](#-كيفية-تشغيل-المشروع)
-- [📁 بنية المشروع](#-بنية-المشروع)
-- [🧩 الأدوار والصلاحيات](#-الأدوار-والصلاحيات)
-- [🧪 مستقبل المشروع](#-مستقبل-المشروع)
-
----
-
-## ✨ مميزات المشروع
-
-### 🔹 **الإدارة (Admin Panel)**
-- إدارة المستخدمين (عملاء – فنيين).
-- إدارة الفئات والخدمات.
-- إدارة الحجوزات والتقييمات.
-- إحصائيات لحظية في لوحة التحكم.
-- واجهة مرتّبة بالكامل باستخدام TailwindCSS.
-
-### 🔹 **الفني (Technician Panel)**
-- لوحة تحكم ببياناته وإحصاءاته.
-- عرض الحجوزات بالتفاصيل + تحديث حالتها.
-- إدارة جدول المواعيد (Schedule).
-- إدارة الخدمات المرتبطة به.
-- نظام تقييمات يظهر فقط بعد إتمام الخدمة.
-
-### 🔹 **العميل (Client Area)**
-- صفحة رئيسية حديثة (Hero + Categories + Popular Services).
-- صفحة استعراض الخدمات.
-- صفحة طلب خدمة (Booking).
-- صفحة "طلباتي".
-- صفحة "حسابي".
-- واجهة نظيفة بأسلوب مواقع الخدمات الحديثة.
-
-### 🔹 **ميزات تقنية**
-- Laravel 12 + Blade Components.
-- TailwindCSS جاهز عبر Vite.
-- توثيق علاقات Models بشكل كامل.
-- استخدام Policies في الصلاحيات (مستقبلاً).
-- تصميم مرن وسهل التعديل.
-
----
-
-## 🧱 بنية قاعدة البيانات (ERD)
-
-
+### 🗄️ Database Architecture (ERD)
+> *Engineered for scalability and data integrity.*
 ![ERD](https://raw.githubusercontent.com/Mohammed-Balaswad/Home_Serveices_Laravel/master/screenshots/ERD.png)
 
 ---
 
-## 🚀 كيفية تشغيل المشروع
+## ✨ Key Features
 
-### 1️⃣ استنساخ المشروع
-```bash
-git clone https://github.com/Mohammed-Balaswad/Home_Services_Laravel.git
-cd Home_Services_Laravel
-```
+### 🔐 Multi-Auth System (3 Roles)
+* **Admin Panel:** Comprehensive CRUD for categories, services, and users. Real-time statistics and booking monitoring.
+* **Technician Portal:** Status management (Accept/Reject/Complete), schedule tracking, and rating history.
+* **Client Experience:** Intuitive service discovery, seamless booking flow, and post-service review system.
 
----
-
-2️⃣ تثبيت الاعتماديات
-```bash
-composer install
-npm install
-```
----
-
-3️⃣ نسخ ملف البيئة
-```bash
-cp .env.example .env
-```
----
-
-4️⃣ ضبط قاعدة البيانات
-- أنشئ قاعدة بيانات جديدة
-- عدّل المتغيرات داخل .env:
-```bash
-DB_DATABASE=home_services_db
-DB_USERNAME=root
-DB_PASSWORD=
-```
----
-
-5️⃣ إنشاء مفتاح التطبيق
-```bash
-php artisan key:generate
-```
----
-
-6️⃣ تنفيذ المايجريشن + Seeder
-```bash
-php artisan migrate --seed
-```
----
-
-7️⃣ تشغيل النظام
-```bash
-php artisan serve
-npm run dev
-```
-
-
-8 حسابات تسجيل الدخول
-### 🔹 **Admin**
-email: admin@gmail.com
-password: 123456
-
-### 🔹 **Technician + Client**
-- You can add Technician from admin tasks
-- Client can added from register form bage 
-
----
----
-
- ## 📁 بنية المشروع
-```bash
-app/
- ├── Http/
- │   ├── Controllers/
- │   │   ├── Admin/
- │   │   ├── Technician/
- │   │   └── Client/
- │   ├── Middleware/
- │   └── Requests/
- ├── Models/
-resources/
- ├── views/
- │   ├── admin/
- │   ├── technician/
- │   ├── client/
- │   └── components/layouts/
-routes/
- ├── web.php
- └── api.php
-```
+### ⚙️ Technical Excellence
+* **Backend:** Laravel (MVC Architecture) with optimized Eloquent relationships.
+* **Frontend:** Modern, responsive UI built with **TailwindCSS** and **Blade Components**.
+* **Security:** Role-based access control and secure data validation.
+* **UX Focus:** Specialized workflows designed for ease of use by non-technical service providers.
 
 ---
 
+## 🚀 Installation & Setup
 
-## 🧩 الأدوار والصلاحيات
-
-### 🔹 **Admin**
-- التحكم الكامل بجميع البيانات
-- إدارة الفنيين والمستخدمين
-- إدارة الخدمات والفئات
-- عرض جميع الحجوزات والتقييمات
-
-### 🔹 **Technician**
-- عرض الحجوزات الخاصة به
-- عتغيير حالة الحجز (قبول/رفض/إكمال)
-- إدارة جدول المواعيد
-- استقبال التقييمات بعد إتمام الخدمات
-- تعديل معلوماته الشخصية
-
-### 🔹 **Client**
-- البحث عن الخدمات والفنيين
-- إنشاء طلب خدمة (Booking)
-- متابعة الطلبات
-- تقييم الخدمات
-- تحديث بيانات الحساب
-
-
----
-
-
----
-
-
-## 🧪 مستقبل المشروع
-
-- إضافة نظام محادثات مباشرة (Client ↔ Technician).
-- إضافة الدفع الإلكتروني.
-- إضافة نظام تنبيهات متكامل (Notifications Table جاهز).
-
-
----
-
-
-## ⭐ شكر وتقدير
-
-تم تطوير هذا المشروع بشغف وإصرار بهدف اكتساب خبرة حقيقية في تطوير الأنظمة
-باستخدام Laravel، مع الاهتمام بالنظافة المعمارية والواجهات الاحترافية.
-
-Developer: Muhammed Saleh Balaswad
-Feel free to ⭐ the repo if you find it useful!
-
----
+1. **Clone & Enter:**
+   ```bash
+   git clone [https://github.com/Mohammed-Balaswad/Home_Services_Laravel.git](https://github.com/Mohammed-Balaswad/Home_Services_Laravel.git)
+   cd Home_Services_Laravel
