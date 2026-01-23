@@ -50,3 +50,49 @@ In my local community, finding trusted technicians (plumbers, electricians, etc.
    ```bash
    git clone [https://github.com/Mohammed-Balaswad/Home_Services_Laravel.git](https://github.com/Mohammed-Balaswad/Home_Services_Laravel.git)
    cd Home_Services_Laravel
+   ```
+2. **Dependencies:**
+   ```bash
+   composer install && npm install
+   ```
+3. **Environment Configuration:**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+4. **Database & Seeding:**
+   - Create a new database (*EX: home_services_db*)
+   - Modify the variables inside .env:
+   ```bash
+    DB_DATABASE=home_services_db
+    DB_USERNAME=root
+    DB_PASSWORD=
+   ```
+5. **Migration & Sedding:(Pre-loaded with Admin and Demo data)**
+   ```bash
+   php artisan migrate --seed
+   ```
+7. **Launch:**
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
+8. **Accounts Login:**
+   #### 🔹 **Admin**
+    - email: admin@gmail.com
+    - password: 123456
+   #### 🔹 **Technician + Client**
+    - You can add Technician from admin tasks
+    - Client can added from register form bage 
+   ---
+
+   ## 🛤️ Future Roadmap
+    * [ ] **Real-time Chat:** Direct communication via WebSockets.
+    * [ ] **Payment Gateway:** Integration for local and international payment methods.
+    * [ ] **Mobile App:** Transitioning to a cross-platform mobile experience.
+  
+    ---
+
+   ## 👨‍💻 Developer
+   **Mohammed Saleh Balaswad** *Software Developer | IT Specialist* "Passionate about solving community problems through clean code and thoughtful design."
+   - Feel free to ⭐ the repo if you find it useful!
